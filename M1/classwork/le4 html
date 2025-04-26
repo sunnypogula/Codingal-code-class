@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>media in HTML</title>
+</head>
+
+<body>
+    <!--Image-->
+    <h2>waterfall Image</h2>
+    <img src="waterfall (2).jpg"
+    alt="waterfall" width="200"
+    height="250">
+</body>
+</html>
