@@ -51,7 +51,8 @@
         </aside>
     </section>
     <figure>
-        <img src="lions.png" width="300" height="200">
+        <img src="lions.png
+        " width="200" height="150">
         <figcaption>A cute lion are very good</figcaption>
     </figure>
 </main>

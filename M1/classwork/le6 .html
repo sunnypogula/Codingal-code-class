@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Personal Details Form </h1>
+    <form>
+        <fieldset> <!-- The fieldest tag is used to group related 
+            element in a form and draws a box around them -->
+            <label>NAME:</label>
+            <input type="text" placeholder="enter name"><br><br> 
+
+            <label>EMAIL ID:</label>
+            <input type="email" id="EMAIL"  placeholder="ENTER email ID"><br><br>
+            
+            <label>CONTACT NUMBER</label>
+            <input type="numder" id="CONTACT" placeholder="ENTER CONTACT NUMBER"><br><br>
+            
+            <label>BIRTHDAY</label>
+            <input type="date" id="BIRTHDAY"><br><br>
+
+            <label>GENDER</label><br>
+            <input type="radio" id="FEMALE" name="GENDER" value="FEMALE">FEMALE<br>
+            <!--name is used to group multiple radio buttons togerther.-->
+            <!--value specifies the actual data sent to the sever when the form is submitted.-->
+            <input type="radio" id="MALE" name="GENDER" value="MALE" > male  <br> <br>
+
+            <LABEL> FAVOURITE CITY </label> <br>
+            <input type="checkbox" id="city1" name="favourite city" value="NEW DELHI"> NEW DELHI<br>
+            <input type="checkbox" id="city2" name="favourite city" value="MUNBHAI"> NEW DELHI<br><br>
+
+            <input type="SUBMIT">
+        </fieldset>
+    </form>
+</body>
+</html>
