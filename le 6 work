@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Personal Details Form </h1>
+    <form>
+        <fieldset> <!-- The fieldest tag is used to group related 
+            element in a form and draws a box around them -->
+            <label>YOUR NAME:</label>
+            <input type="text" placeholder="enter your name"><br><br>
+
+            <label>MOTHER NAME:</label>
+            <input type="text" placeholder="enter mother name"><br><br>
+
+            <label>FATHER NAME:</label>
+            <input type="text" placeholder="enter father name"><br><br>
+
+            <label>BROTHER NAME:</label>
+            <input type="text" placeholder="enter brother name"><br><br>
+
+            <label>SISTER NAME:</label>
+            <input type="TEXT" placeholder="enter sister name"><br><br>
+
+            <label>COUNTRY NAME:</label>
+            <input type="text" id="name of Country" placeholder="country name"> <br><br>
+
+            <label>STATES NAME</label>
+            <input type="TEXT" id="state" placeholder="state name"><br><br>
+
+            <label>VILLAGES NAME</label>
+            <input type="text" id="village" placeholder="village name"><br><br>
+            
+            <label>CONTACT NUMBER</label>
+            <input type="TEXT" id="CONTACT" placeholder="enter contact number"><br><br>
+
+            <label>RELIGIONS:</label>
+            <input type="TEXT" id="RELIGION" placeholder="enter religion"><br><br>
+ 
+            <label>AADHER CARD NUMBER:</label>
+            <input type="TEXT" id="AADHER"  placeholder="enter aadher card number"><br><br>
+
+            <label>PASSPORT NUMBER:</label>
+            <input type="TEXT" id="passport"  placeholder="enter passport number"><br><br>  
+
+            <label>BIRTHDAY</label>
+            <input type="date" id="BIRTHDAY"><br><br>
+
+            <label>GENDER</label><br>
+            <input type="radio" id="FEMALE" name="GENDER" value="FEMALE">FEMALE<br>
+            <!--name is used to group multiple radio buttons togerther.-->
+            <!--value specifies the actual data sent to the sever when the form is submitted.-->
+            <input type="radio" id="MALE" name="GENDER" value="MALE" > MALE  <br> <br>
+
+
+            <LABEL> FAVOURITE CITY </label> <br>
+            <input type="checkbox" id="city1" name="favourite city" value="NEW DELHI"> NEW DELHI<br>
+            <input type="checkbox" id="city2" name="favourite city" value="MUMBHAI"> MUMBHAI<br><br>
+
+            <input type="SUBMIT">
+        </fieldset>
+    </form>
+</body>
+</html>
