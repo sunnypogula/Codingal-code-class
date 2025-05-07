@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Styling Exmples</title>
+    <!--Internal CSS -->
+    <style>
+        h2 {
+            color: green;
+        }
+        /*comment*/
+
+    </style>
+    <!--Enternal CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <hr>
+    <!--Inline CSS-->
+    <h1 style="color:red;">I AM USING INLINE CSS</h1>
+    <!--Internal CSS-->
+    <h2>I AM USING INTERNAL CSS</h2>
+    <!--External CSS -->
+    <h3> I AM USING EXTERNAL SELECTOR</h3>
+    <hr>
+
+    <!--element selector example -->
+    <h4>I AM USING ELEMENT SELECTOR</h4>
+    <hr>
+
+    <!--class selector example-->
+    <h2 class="myclass">I AM USING CLASS SELECOTOR </h2>
+    <h4 class="myclass">I AM USING CLASS SELECOTOR</h4>
+    <hr>
+
+    <!--group selector example-->
+    <h5>I AM USING GROUP SELECTOR</h5>
+    <p>I AM USING GROUP SELECTOR</p>
+    <hr>
+</body>
+</html>
