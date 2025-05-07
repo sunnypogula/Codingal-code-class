@@ -1,0 +1,46 @@
+<!DOCTYPE HTML >
+<HTML>
+<HEAD>
+    <STYLE>
+        body { 
+            background-color:red;
+            background-image:url(water.jpg);
+            background-size:300px 300px;
+            background-repeat:no-repeat;/*no repeat*/
+            background-position:top right;
+            background-attachment:fixed;/*scrool*/
+        }
+        /*comment*/
+    </STYLE>
+</HEAD>   
+
+<body>
+    HELLO THE WORLD.
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br> 
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+   <br><br><br> <br><br> <br><br> <br><br> <br>
+</body>
+</HTML>
