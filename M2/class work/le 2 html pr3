@@ -1,0 +1,25 @@
+<!DOCTYE html>
+<html>
+<head>
+<style>
+/* The animation code */
+@keyframes example{
+    0%  {background-color:red;}
+    25% {background-color:yellow;}
+    50% {backgroung-color:blue;}
+    100%{backgroung-color:green;}
+}
+/*The element to apply the animation to */
+div {
+    width:400px;
+    height:400px;
+    background-color:red;
+    animation-name:example;
+    animation-duration:4s;
+}
+</style>
+</head>
+<body>
+<div>
+Hi.Welcome To Codingal Class </div></body>
+</html>
