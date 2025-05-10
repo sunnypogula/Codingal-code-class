@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width:400px;
+            height:250px;
+            background-color:blue;
+            border:2px solid black;/*dashed*/
+
+        }
+
+        #mydiv {
+            transform:rotate(180deg);/*rotatex*/
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        codingal
+    </div>
+
+    <div id="mydiv">
+        codingal
+    </div>
+</body>
+</html>
