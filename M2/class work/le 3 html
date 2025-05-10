@@ -1,0 +1,31 @@
+<!DOCTYPYE html>
+<html>
+    <head>
+        <title>Typography</title>
+        <style>
+            h1{
+                background-color:pink;
+                color:red;
+                font-family:'Franklin Gothic medium','Arial Narrow',
+                Arial,sans-serif;            
+            }
+
+            #text1 {
+                color:blue;
+                font-size:40px
+            }
+
+           .p1 {
+                font-size:40px;
+                color:blueviolet;
+                font-family:Courier, monospace;
+            }
+        </style>
+    </head>
+
+ <body>
+    <h1>Typography</h1>
+    <p id="text1">Welcome to codingal</p>
+    <mark class="p1">Welcome to codingal</mark>
+ </body>
+</html>
