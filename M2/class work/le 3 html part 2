@@ -7,9 +7,7 @@
             height:250px;
             background-color:blue;
             border:2px solid black;/*dashed*/
-
         }
-
         #mydiv {
             transform:rotate(180deg);/*rotatex*/
         }
@@ -20,7 +18,6 @@
     <div>
         codingal
     </div>
-
     <div id="mydiv">
         codingal
     </div>
