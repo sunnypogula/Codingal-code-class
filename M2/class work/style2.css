@@ -1,0 +1,50 @@
+body {
+    font-family:'Arial','sans-serif' ;
+    background-color:azure;
+    color:brown(210,17%,82%)
+}
+h1 {
+    color:chartreuse;
+}
+/* Attribute selectoer */
+a {
+    color:darkgreen;
+    text-decoration:none ;
+}
+a:hover{
+    color:green;
+}
+/* Child selector*/
+ul>li {
+    font-weight:bold;
+}
+/*sibling selector */
+h1+p {
+    background-color:hotpink;
+    padding: 10px;
+    border-radius:5px;
+}
+/*:hover pseudo-class*/
+ul li:hover {
+    color:darkmagenta;
+}
+/*:nth-child(n) pseudo-class*/
+ul li:nth-child(3) {
+    background-color:darkorange;
+}
+/*:not(selector) pseudpo-class*/
+p:not(:first-of-type) {
+    text-decoration:underline;
+}
+/*::before pseudo-element*/
+a::after {
+    content:"🚀";
+}
+a::after {
+    content:👌 ;
+}
+/*::first-letter pseudo-element*/
+p::first-letter {
+    font-size:250%;
+    color:rgb(86, 139, 0);
+}

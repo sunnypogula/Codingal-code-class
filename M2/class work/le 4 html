@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>welcome to the space Explorer's club</h1>
+    <ul>
+        <li>MOON MISSIONS</li>
+        <li>MARS ROVERS</li>
+        <li>INTERNATIONAL SAPCE STATION</li>
+        <li>TELESCOPES AND STARS</li>
+        <li>BLACK HOLES MYSTERIES</li>
+    </ul>
+    <P>SPACE EXPLORATION HAS ALWAYS
+        CAPTIVATED HUMAN IMGINATION.
+        IT'S A JOURNEY TO THE UNKOWN!
+    </P>
+    <P>FROM THE MOON TO DISTANT GALAXIES,
+        WE COMTINUE TO EXPLORE THE VASTNESS OF 
+        SPACE.
+    </P>
+    <a hraf="#">JOIN OUR MISSION</a>
+    <a hraf="#">LATEST SPACE NEWS</a>
+    <a harf="#">GALLERY OF THE UNIVERSE</a>
+</body>
+</html>
