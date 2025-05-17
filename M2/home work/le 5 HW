@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img#worldimgRight {
+            float:right;
+        }
+        img#worldimgeft {
+            float:left;
+        }
+         #example1 {
+            background-color:rgb(30, 210, 171);
+            /* top right bottom left*/
+            border:5px solid rgb(16, 16, 16);
+            padding:70px 30px 90px 25px; /* inside
+            spacing (from content to border)*/
+            margin:65px;/*space outside the border*/
+        }
+        .example2 {
+            width:150px;
+            height:49px;
+            background-color:rgb(255, 0, 0);
+            padding:20px 40px;
+            border:4px solid black;
+            margin:10px 30px 40px 50px
+        }
+    </style>
+</head>
+<body>
+     <h1>Box model example  and Float right</h1>
+    <he style="width:100; height:2px; background-color:rgb(215, 246, 11)">
+    <div id="example1">My content Example 100</div>
+    <div class="example2">My content example 111</div>
+    The world is the totality of entities, the whole of reality, or everything that exists.[1] 
+        The nature of the world has been conceptualized differently in different fields. Some conceptions 
+        see the world as unique, while others talk of a "plurality of worlds". Some treat the world as one 
+        simple object, while others analyze the world as a complex made up of parts.
+    <p>
+        <img id="worldimgRight" src="world.png" alt="worldimgRight" style="width:100px; height:100px; ">
+        <img id="worldimgleft" src="world.png" alt="worldimgleft" style="width:100px; height:100px;">
+</body>
+</html>
