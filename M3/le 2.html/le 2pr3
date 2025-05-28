@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+
+<title>mark</title>
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h1>Addreviation</h1>
+    <p>it is used to mark up an abbreviation or acronym:</p>
+    <p><abbr title="codingal">cdgl</abbr> was found in 2020.</p>
+    <h1>Blockquotes</h1>
+    <p>its is uesd to present content from another source:</p>
+    <blockquote class="Blockquotes-footer">
+        <p>codingal is on a mission to inspire all the school kids</p>
+        <footer class="Blockquotes-footer">from codingal</footer>
+    </blockquote>
+    <h1>multiple code lines </h1>
+    <p>for multiple lines of code, use the pre element:</p>
+    <pre>
+        var num1=5;
+        var num2=6;
+        var sum=num1+num2;
+    </pre>
+    <h1>keyboard inputs</h1>
+    <p>to indicate input that is typically entered via the keyboard</p>
+    <p>use<kbd>ctrl+p</kbd>to open the print dialog box.</p>
+    <input type=" color">
+</body>
+</html>
