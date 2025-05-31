@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .my-text {
+       font-size:55px;
+       font-weight:bold;
+       color:blue;
+    }
+</style>
+<title>USING 3 CONTAINERS </title>
+</head>
+<body>
+    <div class="container bg-success text-danger">
+        <h1>USED BY CONTAINER</h1>
+        <p>THIS IS A PART IS INSIDE A CONTAINER CLASSES</p>
+        <p>THE CONTAINER CLASS PROVIDES A RESPONSIVE FIXED WHIT THE CONTAINER.</p>     
+    </div>
+     </div>
+     <div class="container-fiuld bg-warning text-white">
+        <h1>USED BY CONTAINER-FIULD</h1>
+        <p>THIS IS SOME TEXT USED BY CONTAINER -FIULD.</p>
+    </div>
+    <div class="container p-4 my-4 bg-danger text-white">
+        <h1>I AM USED BY PADDING AND MARGIN DANGERRR</h1>
+        <p>I AM USING PADDING AND MARGIN </p>
+    </div>
+    <div class="container bg-success my-text">
+        <h1>THIS USED BY STYLE AND MY-TEXT</h1>
+        <p> THIS IS PART OF CONTAINER CLASS</p>
+        <div>HELLOOOO...<div>
+</body>
+</html>
