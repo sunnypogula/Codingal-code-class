@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>what is subject</h1>
+    <h3>there are so many types os subject</h3>
+    <ul>
+        <li>maths</li>
+        <li>science</li>
+        <li>english</li>
+        <li>social</li>
+        <li>hindi</li>
+    </ul>
+    <P>The list Maths, Science, Social Studies, 
+        English, and Hindi represents five common 
+        subjects taught in many educational systems.
+    </P>Social is likely referring to Social Studies, 
+    which can encompass history, geography, civics, 
+    and other related disciplines. 
+    <P>
+    </P>
+    <a hraf="#">STUDY WELL </a>
+    <a hraf="#">BE A HUMAN AND STUDY WELL
+    </a>
+    <a harf="#">ALL THE BEST</a>
+</body>
+</html>
