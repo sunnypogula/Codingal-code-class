@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>convert a javascript object into a json string, and send it to the server
+    </h2>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+        var myObj = { name : "riya" , age : 12 , grade : 7};
+        var myJSON = JSON.stringify(myObj);
+        var newObj = JSON.parse(myJSON);
+        document.getElementById("result1").innerHTML = newObj.name;
+    </script>
+</body>
+</html>
