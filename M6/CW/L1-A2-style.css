@@ -1,0 +1,19 @@
+body {
+    background:#252525;
+    font-family: "baloo tamma2", cursive;
+    scroll-behavior: smooth;
+}
+/* main heading font*/
+.a-heading {
+    font-family: "roboto slab", serif;
+}
+/*main container height*/
+.main-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('robotic_arm.webp.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
