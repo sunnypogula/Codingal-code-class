@@ -9,9 +9,10 @@ if BMI <= 18.4:
     print("you are unrweight.") 
 elif BMI <= 24.9:
     print("you are healthy.") 
-if BMI <= 29.9:
+elif BMI <= 29.9:
     print("you are severely over weight.") 
-if BMI <= 34.9:
+elif BMI <= 34.9:
     print("you are obese.") 
-if BMI <= 18.4:
-    print("your are severely obese.") 
+
+else:
+    print("you are severely obese.") 
