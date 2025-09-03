@@ -13,4 +13,4 @@ if num>1:
         print(f"{num}is a prime number.")
 else:
     #nujmbeeeer less then 2 are not prime
-    print (f"{num}is not a prime number.")
+    print (f"{num}is not a prime number.mnnnnnnnr ")
