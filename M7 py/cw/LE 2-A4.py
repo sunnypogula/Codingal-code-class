@@ -10,6 +10,7 @@ y = x
 #singlr line sawp
 x,y = y,x
 
-#displaying results after swapping\
-print("value is of x after swapping,"x)
-print("value is of y after swapping,"y)
+#displaying results after swapping
+
+print("value is of x after swapping",x)
+print("value is of y after swapping",y)
