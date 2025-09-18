@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Bank App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Heera's Bank App</h1>
+
+  <div class="container">
+    <input type="number" id="amount" placeholder="Enter amount">
+    <select id="type">
+      <option value="credit">Credit</option>
+      <option value="debit">Debit</option>
+    </select>
+    <button onclick="addTransaction()">Add Transaction</button>
+
+    <h2>Transactions</h2>
+    <ul id="transactionList"></ul>
+
+    <h3>Total Balance: ₹<span id="balance">0</span></h3>
+  </div>
+
+  <script>
+    let balance = 0;
+
+    function addTransaction() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const type = document.getElementById('type').value;
+      const list = document.getElementById('transactionList');
+
+      if (!amount) return;
+
+      const item = document.createElement('li');
+      item.textContent = type.toUpperCase();{amount};
+      list.appendChild(item);
+
+      if (type === 'credit') balance += amount;
+      else balance -= amount;
+
+      document.getElementById('balance').textContent=balance;document.getElementById('amount').value = '';
+    }
+  </script>
+</body>
+</html>
