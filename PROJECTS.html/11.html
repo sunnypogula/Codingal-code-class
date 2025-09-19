@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Classes Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Class with Static & Inherited Methods</h2>
+  <div id="output"></div>
+
+  <script>
+    // Parent Class
+    class Animal {
+      constructor(name) {
+        this.name = name;
+      }
+
+      speak() {
+        return `this.name makes a sound.`;
+      
+
+      staticinfo() 
+        return"This is the Animal class.";
+      
+
+    // Child Class
+    class Dog extends Animal 
+      constructor(name, breed) 
+      super(name);
+      this.breed=breed;
+      
+
+      bark() 
+      return `{this.name} barks! It is a ${this.breed}.`;
+      }
+
+      showAll() {
+        return this.speak() + "<br>" + this.bark() + "<br>" + Animal.info();
+      }
+    }
+
+    // Create object and display
+    const myDog = new Dog("Rex", "German Shepherd");
+    document.getElementById("output").innerHTML = myDog.showAll();
+  </script>
+
+</body>
+</html>
+
