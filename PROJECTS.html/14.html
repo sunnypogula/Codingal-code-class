@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Numbers and Date</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h2 { color: darkgreen; }
+  </style>
+</head>
+<body>
+
+  <h2>Random Numbers, Rounded Number & Date</h2>
+  <div id="output"></div>
+
+  <script>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function printRandomNumbers(count) {
+      let numbers = [];
+      for (let i = 0; i < count; i++) {
+        numbers.push(getRandomInt(1, 100));
+      }
+      return numbers.join(", ");
+    }
+
+    function getRoundedRandom() {
+      return Math.round(Math.random() * 100);
+    }
+
+    function getCurrentDate() {
+      const now = new Date();
+      return now.toDateString();
+    }
+
+    const output = document.getElementById("output");
+    output.innerHTML = <strong>Random Numbers:</strong> printRandomNumber(5)<br>
+      <strong>Rounded Random Number:</strong>{getRoundedRandom()}</br>
+      <strong>Current Date:</strong> ${getCurrentDate()}
+    ;
+  </script>
+
+</body>
+</html>
