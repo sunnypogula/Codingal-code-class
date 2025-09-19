@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS Positioning</title>
+  <style>
+    div.relative {
+      position: relative;
+      border: 3px solid #ff0000;
+      left: 30px;
+      top: 30px;
+    }
+
+    div.fixed {
+      position: fixed;
+      border: 10px solid #ff0000;
+      left: 400px;
+      top: 400px;
+    }
+
+    div.absolute {
+      position: absolute;
+      border: 3px solid #ff0000;
+      left: 300px;
+      top: 300px;
+    }
+
+    div.static {
+      position: static;
+      border: 4px solid #ff0000;
+      left: 300px;
+      top: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Position Property Examples</h1>
+  
+  <div class="relative">
+    This div is <strong>relative</strong> positioned.
+  </div>
+  
+  <div class="fixed">
+    This div is <strong>fixed</strong> positioned.
+  </div>
+  
+  <div class="absolute">
+    This div is <strong>absolute</strong> positioned.
+  </div>
+  
+  <div class="static">
+    This div is <strong>static</strong> positioned.
+  </div>
+</body>
+</html>
