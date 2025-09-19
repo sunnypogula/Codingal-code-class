@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum and Trigonometric Functions</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h2 { color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>Sum and Trigonometry</h2>
+
+  <div id="output"></div>
+
+  <script>
+    // Function to sum any number of arguments
+    function sumOfArgs(...args) {
+      return args.reduce((acc, val) => acc + val, 0);
+    }
+
+    // Function to print trigonometric values (input in degrees)
+    function printTrigValues(degree) {
+      const radian = degree * (Math.PI / 180);
+      return {
+        sin: Math.sin(radian).toFixed(4),
+        cos: Math.cos(radian).toFixed(4),
+        tan: Math.tan(radian).toFixed(4)
+      };
+    }
+
+    // Output
+    const output = document.getElementById("output");
+
+    const sum = sumOfArgs(10, 20, 5, 15);
+    const trig = printTrigValues(30);
+
+    output.innerHTML = 
+      <strong>Sum of arguments:</strong> ("sum")<br><br>
+      <strong>Trigonometric values for 30°:</strong><br>
+      sin(30°):{trig.sin}
+    </br>
+      cos(30°): trig.cos
+    </br>
+      tan(30);{trig.tan};
+  </script>
+
+</body>
+</html>
