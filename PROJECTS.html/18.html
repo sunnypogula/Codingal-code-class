@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagination Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+  <style>
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <div class="container">
+    <h2 class="mb-4">Sam's Hobbies - Paginated</h2>
+
+    <!-- Content Sections -->
+    <div id="page1" class="content-section active">
+      <h4>Page 1</h4>
+      <p>Sam loves painting and sketching in his free time.</p>
+    </div>
+    <div id="page2" class="content-section">
+      <h4>Page 2</h4>
+      <p>He enjoys playing the guitar and composing music.</p>
+    </div>
+    <div id="page3" class="content-section">
+      <h4>Page 3</h4>
+      <p>Sam is also passionate about photography and nature walks.</p>
+    </div>
+
+    <!-- Pagination -->
+    <nav>
+      <ul class="pagination mt-4">
+        <li class="page-item"><a class="page-link" href="#" onclick="showPage(1)">1</a></li><li class="page-item"><a class="page-link" href="#" onclick="showPage(2)">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" onclick="showPage(3)">3</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function showPage(page) {
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach((section, index) => {
+        section.classList.remove('active');
+        if (index === page - 1) {
+          section.classList.add('active');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
