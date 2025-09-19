@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplication with Undefined Check</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h2 { color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>Multiplication Operation</h2>
+  <p id="result"></p>
+
+  <script>
+    function multiply(a, b) {
+      if (a === undefined || b === undefined) {
+        return "Error: One or both values are undefined.";
+      }
+      return a * b;
+    }
+
+    // Example usage
+    let result1 = multiply(5, 4);        // Both defined
+    let result2 = multiply(8);           // One undefined
+
+    document.getElementById("result").innerHTML = 
+      multiply(5, 4) = result1 <br>
+      multiply(8) = {result2}
+    ;
+  </script>
+
+</body>
+</html>
