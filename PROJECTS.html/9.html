@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error Handling Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #output {
+      margin-top: 20px;
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Try & Catch Error Example</h2>
+
+  <button onclick="generateError()">Click to Cause Error</button>
+
+  <div id="output"></div>
+
+  <script>
+    function generateError() {
+      try {
+        // Intentionally causing a ReferenceError
+        let result = undefinedVariable + 5;
+        document.getElementById("output").innerText = "Result: " + result;
+      } catch (error) {
+        document.getElementById("output").innerText = "Error caught: " + error.message;
+      }
+    }
+  </script>
+
+</body>
+</html>
