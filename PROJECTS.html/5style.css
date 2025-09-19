@@ -4,8 +4,8 @@ body {
   padding: 0;
 }
 
-.restaurant-section {
-  background-color: #f4a261;
+.intro {
+  background-color: #f44336;
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -13,28 +13,30 @@ body {
 
 .portfolio {
   padding: 40px 20px;
-  background-color: #fff;
   text-align: center;
 }
 
-.portfolio .gallery {
+.portfolio h2 {
+  margin-bottom: 30px;
+}
+
+.gallery {
   display: flex;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
-  margin-top: 20px;
 }
 
-.gallery .item {width: 200px;
+.card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.gallery img {
+.card img {
   width: 100%;
-  border-radius: 10px;
-}
-
-
-.gallery p {
-  margin-top: 8px;
-  font-weight: bold;
+  height: 150px;
+  object-fit: cover;
 }
