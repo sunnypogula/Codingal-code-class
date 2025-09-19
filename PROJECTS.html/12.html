@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object and Array Operations</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    h2 { color: #ff5733; }
+  </style>
+</head>
+<body>
+
+  <h2>Tinu's Info</h2>
+  <div id="output"></div>
+
+  <script>
+    // Object with key-value pairs
+    consttinu = {
+      name: "Tinu",
+      age: 12,
+      hobby: "Painting"
+    };
+
+    // Array of favourite colours
+    const favColors = ["Blue", "Pink", "Purple", "Green"];
+
+    // Access object values by key
+    let info = <strong>Name:</strong>
+    tinu.hobby;
+    // Access array values by index
+    info += <strong>Favourite Colours:</strong> ;
+    favColors.forEach((color, index) = 
+      info += Color{ index 1color;
+    )
+
+    // Perform some array methods
+    favColors.push("Red");
+    favColors.sort();
+
+    info += <strong>After push     sort:</strong> {favColors.join(", ")};
+
+    // Show on page
+    document.getElementById("output").innerHTML = info;
+  </script>
+
+</body>
+</html>
