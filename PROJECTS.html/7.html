@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    label, input {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 8px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Login Form</h2>
+    <form id="loginForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" placeholder="Enter your age" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const age = parseInt(document.getElementById("age").value);
+
+      if (name === "") {
+        alert("Please enter your name.");
+        return;
+      }
+
+      if (isNaN(age) || age < 18) {
+        alert("You must be 18 or older to log in.");
+        return;
+      }
+
+      alert("Login successful!");
+    });
+  </script>
+
+</body>
+</html>
