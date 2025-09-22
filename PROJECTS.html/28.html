@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank App - Expense Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 10px 0;
+      padding: 8px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Bank App - Income & Expense Tracker</h2>
+
+  <form id="bankForm">
+    <label for="description">Description:</label><br>
+    <input type="text" id="description" placeholder="e.g., Grocery" required><br>
+
+    <label for="amount">Amount (₹):</label><br>
+    <input type="number" id="amount" placeholder="e.g., 500" required><br>
+
+    <label for="type">Type:</label><br>
+    <select id="type" required>
+      <option value="">--Select--</option>
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select><br>
+
+    <button type="submit">Add Transaction</button>
+    <p id="errorMsg" class="error"></p>
+  </form>
+
+  <script>
+const form = document.getElementById('bankForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const desc = document.getElementById('description').value.trim();
+      const amount = parseFloat(document.getElementById('amount').value);
+      const type = document.getElementById('type').value;
+
+      if (desc === '' || isNaN(amount) || amount <= 0 || type === '') {
+        errorMsg.textContent = 'Please fill out all fields correctly.';
+      } else {
+        errorMsg.textContent = '';
+        alert(Transactionadded: type.toUpperCase() of₹{amount} for "${desc}");
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
