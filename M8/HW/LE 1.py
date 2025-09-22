@@ -1,16 +1,17 @@
 import random
 
-# List of numbers provided to Harsh
+# List of numbers provided to srujan
+
 numbers = [3, 7, 12, 19, 25, 30]
 
 # Randomly choose a number (the judge's number)
 secret_number = random.choice(numbers)
 
-print("Welcome, Harsh!")
+print("Welcome, srujan!")
 print("Here is your list of numbers:")
 print(numbers)
 
-# Ask Harsh to guess
+# Ask srujan to guess
 guess = int(input("Guess the number selected by the judge: "))
 
 # Compare guess with secret number
