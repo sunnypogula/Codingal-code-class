@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+    }
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Class Attendance Checker</h2>
+
+  <label>Total number of working days:</label><br>
+  <input type="number" id="workingDays" placeholder="e.g., 100"><br>
+
+  <label>Total number of days absent:</label><br>
+  <input type="number" id="absentDays" placeholder="e.g., 30"><br>
+
+  <button onclick="checkAttendance()">Check Attendance</button>
+
+  <div class="result" id="output"></div>
+
+  <script>
+    function checkAttendance() {
+      const totalDays = parseInt(document.getElementById("workingDays").value);
+      const absentDays = parseInt(document.getElementById("absentDays").value);
+      const output = document.getElementById("output");if (isNaN(totalDays) || isNaN(absentDays) || totalDays <= 0 || absentDays < 0 || absentDays > totalDays) {
+        output.textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      const attendedDays = totalDays - absentDays;
+      const percentage = (attendedDays / totalDays) * 100;
+
+      output.innerHTML = Attendance: ${percentage.toFixed(2)}%</br>;
+      if (percentage >= 75) {
+        output.innerHTML += "✅ You are allowed to sit in the exam.";
+      } else {
+        output.innerHTML += "❌ You are NOT allowed to sit in the exam.";
+      }
+    }
+  </script>
+
+</body>
+</html>
