@@ -21,7 +21,7 @@ class Library:
             )
     
     def addBook(self,book):
-        if book not in self.boooksList:
+        if book not in self.booksList:
             self.booksList.append(book)
             print(f"{book} has been added to the book list.")
         else:
