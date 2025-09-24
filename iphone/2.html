@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Orimono Store</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background:#f4f4f4;
+  }
+  header {
+    background:#36a3a3;
+    color:#fff;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  header h1 {
+    margin:0;
+    font-size:1.5em;
+  }
+  nav a {
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+  }
+
+  /* Product grid */
+  .products {
+    max-width:1200px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:20px;
+    padding:0 10px;
+  }
+  .card {
+    background:#fff;
+    border-radius:6px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    transition:transform 0.2s;
+  }
+  .card:hover { transform: translateY(-3px);}
+  .card img {
+    width:100%;
+    height:180px;
+    object-fit:cover;
+  }
+  .card-content {
+    padding:15px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+  .card h3 {
+    margin:0 0 8px;
+    font-size:1.1em;
+  }
+  .price {
+    margin:0 0 12px;
+    color:#333;
+    font-weight:bold;
+  }
+  .add-btn {
+    padding:8px;
+    background:#36a3a3;
+    color:#fff;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+    font-size:0.9em;
+    transition:background 0.2s;
+  }
+  .add-btn:hover { background:#2d8888; }
+
+  footer {
+    text-align:center;
+    padding:20px;
+    background:#333;
+    color:#fff;
+    margin-top:40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Orimono Store</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Cart (<span id="cart-count">0</span>)</a>
+  </nav>
+</header>
+
+<div class="products" id="product-list">
+  <!-- Products will be inserted by JS -->
+</div>
+
+<footer>
+  &copy; 2025 Orimono Store
+</footer>
+
+<script>
+// Example product data
+const products = [
+  {name:"Basket (large)", price:750, img:"images/basket_large.jpg"},
+  {name:"Basket (medium)", price:600, img:"images/basket_medium.jpg"},
+  {name:"Box", price:650, img:"images/box.jpg"},
+  {name:"Cart", price:1850, img:"images/cart.jpg"},
+  {name:"Flamingo", price:800, img:"images/flamingo.jpg"},
+  {name:"Glasses", price:1500, img:"images/glasses.jpg"},
+  {name:"Honey Bee Tree", price:650, img:"images/honeybee_tree.jpg"},
+  {name:"Pink Flower", price:550, img:"images/pink_flower.jpg"},
+  {name:"Rose Flower", price:600, img:"images/rose_flower.jpg"},
+  {name:"Small Swan (Simple)", price:250, img:"images/small_swan.jpg"},
+  {name:"Snake", price:1000, img:"images/snake.jpg"},
+  {name:"Swan Basket", price:400, img:"images/swan_basket.jpg"},
+  {name:"Swan Pencil Holder", price:500, img:"images/swan_holder.jpg"},
+  {name:"Swan (large)", price:1280, img:"images/swan_large.jpg"},
+  {name:"Swan (medium)", price:800, img:"images/swan_medium.jpg"},
+  {name:"Tree", price:500, img:"images/tree.jpg"}
+];
+
+const productList = document.getElementById("product-list");
+const cartCount = document.getElementById("cart-count");
+let cartTotal = 0;
+
+products.forEach(p => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <img src="${p.img}" alt="${p.name}">
+    <div class="card-content">
+      <h3>${p.name}</h3>
+      <p class="price">Price: Rs. ${p.price}</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+  `;
+  card.querySelector(".add-btn").addEventListener("click", () => {
+    cartTotal++;
+    cartCount.textContent = cartTotal;
+  });
+  productList.appendChild(card);
+});
+</script>
+
+
+</body>
+</html>

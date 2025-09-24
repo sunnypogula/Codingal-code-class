@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orimono Store — Checkout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+    }
+    header a, footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+    .payment-instructions {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f0f8ff;
+      border: 1px solid #a0cfe8;
+      border-radius: 4px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      display: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    .thank-you {
+      text-align: center;
+      font-size: 1.2em;
+      color: #155724;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 4px;
+      display: none;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#">Home</a>
+    <a href="#">Cart</a>
+    (<span id="cart-count">0</span>)
+  </header>
+
+  <div class="container">
+    <h2>Checkout</h2>
+
+    <form id="checkout-form" novalidate>
+      <div class="form-group">
+        <label for="fullName">Full Name<span class="required">*</span></label>
+        <input type="text" id="fullName" name="fullName" required />
+        <div class="error" id="error-fullName">Please enter your full name.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email<span class="required">*</span></label>
+        <input type="email" id="email" name="email" required />
+        <div class="error" id="error-email">Please enter a valid email.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone<span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required />
+        <div class="error" id="error-phone">Please enter your phone number.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address<span class="required">*</span></label>
+        <textarea id="address" name="address" required></textarea>
+        <div class="error" id="error-address">Please enter your address.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method<span class="required">*</span></label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="">-- Select --</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="easypaisa">EasyPaisa</option>
+        </select>
+        <div class="error" id="error-paymentMethod">Please select a payment method.</div>
+      </div>
+
+      <!-- This section shows only if EasyPaisa is selected -->
+      <div id="easypaisa-section" class="payment-instructions" style="display: none;">
+        <p>Send your amount to: <strong>03271406711</strong></p>
+        <div class="form-group">
+          <label for="screenshot">Upload screenshot (for EasyPaisa)</label>
+          <input type="file" id="screenshot" name="screenshot" accept="image/*" />
+        </div>
+      </div>
+
+      <button type="submit" id="placeOrderBtn">Place Order</button>
+    </form>
+
+    <div class="thank-you" id="thankYouMessage">
+      ✅ Thank you! Your order has been placed. We’ll contact you soon.
+    </div>
+
+    <a href="#" class="back-link">⬅ Back to Products</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Orimono Store
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("checkout-form");
+      const paymentSelect = document.getElementById("paymentMethod");
+      const easySection = document.getElementById("easypaisa-section");
+      const thankYou = document.getElementById("thankYouMessage");
+
+      paymentSelect.addEventListener("change", () => {
+        if (paymentSelect.value === "easypaisa") {
+          easySection.style.display = "block";
+        } else {
+          easySection.style.display = "none";
+        }
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Clear previous error messages
+        document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+
+        let valid = true;
+
+        // Simple validation
+        const fullName = document.getElementById("fullName").value.trim();
+        if (!fullName) {
+          document.getElementById("error-fullName").style.display = "block";
+          valid = false;
+        }
+
+        const email = document.getElementById("email").value.trim();
+        if (!email || !email.includes("@")) {
+          document.getElementById("error-email").style.display = "block";
+          valid = false;
+        }
+
+        const phone = document.getElementById("phone").value.trim();
+        if (!phone) {
+          document.getElementById("error-phone").style.display = "block";
+          valid = false;
+        }
+
+        const address = document.getElementById("address").value.trim();
+        if (!address) {
+          document.getElementById("error-address").style.display = "block";
+          valid = false;
+        }
+
+        const paymentMethod = paymentSelect.value;
+        if (!paymentMethod) {
+          document.getElementById("error-paymentMethod").style.display = "block";
+          valid = false;
+        }
+
+        if (!valid) {
+          return;
+        }
+
+        // Simulate sending data to server…
+        // You can replace this with an actual fetch/AJAX call.
+        setTimeout(() => {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>
