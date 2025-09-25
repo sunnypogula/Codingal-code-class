@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Orimono Store</title>
+<title>Fruits Store</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -93,7 +92,7 @@
 <body>
 
 <header>
-  <h1>Orimono Store</h1>
+  <h1>Fruits Store</h1>
   <nav>
     <a href="#">Home</a>
     <a href="#">Cart (<span id="cart-count">0</span>)</a>
@@ -105,28 +104,21 @@
 </div>
 
 <footer>
-  &copy; 2025 Orimono Store
+  &copy; 2025 fruits store
 </footer>
 
 <script>
 // Example product data
 const products = [
-  {name:"Basket (large)", price:750, img:"images/basket_large.jpg"},
-  {name:"Basket (medium)", price:600, img:"images/basket_medium.jpg"},
-  {name:"Box", price:650, img:"images/box.jpg"},
-  {name:"Cart", price:1850, img:"images/cart.jpg"},
-  {name:"Flamingo", price:800, img:"images/flamingo.jpg"},
-  {name:"Glasses", price:1500, img:"images/glasses.jpg"},
-  {name:"Honey Bee Tree", price:650, img:"images/honeybee_tree.jpg"},
-  {name:"Pink Flower", price:550, img:"images/pink_flower.jpg"},
-  {name:"Rose Flower", price:600, img:"images/rose_flower.jpg"},
-  {name:"Small Swan (Simple)", price:250, img:"images/small_swan.jpg"},
-  {name:"Snake", price:1000, img:"images/snake.jpg"},
-  {name:"Swan Basket", price:400, img:"images/swan_basket.jpg"},
-  {name:"Swan Pencil Holder", price:500, img:"images/swan_holder.jpg"},
-  {name:"Swan (large)", price:1280, img:"images/swan_large.jpg"},
-  {name:"Swan (medium)", price:800, img:"images/swan_medium.jpg"},
-  {name:"Tree", price:500, img:"images/tree.jpg"}
+  {name:"Mango (per kg)", price:50 , img:"Mango.jpg"},
+  {name:"Banana (per kg)", price:60, img:"Banana.avif"},
+  {name:"Apple (per kg)", price:90, img:"Apple.jpg"},
+  {name:"Orange (per kg)", price:50, img:"images/Orange.jpg"},
+  {name:"Watermelon (per kg)", price:80, img:"Watermelon.jpg"},
+  {name:"Cherry (per kg)", price:50, img:"Cherry.jpg"},
+  {name:"Papaya  (per kg)", price:50, img:"Papaya.jpg"},
+  {name:"Lemon (per kg)", price:50, img:"Lemon.jpg"},
+  {name:"Peach (per kg)", price:60, img:"peach.jpg"},
 ];
 
 const productList = document.getElementById("product-list");
@@ -135,7 +127,7 @@ let cartTotal = 0;
 
 products.forEach(p => {
   const card = document.createElement("div");
-  card.className = "card";
+  card.className = "card ";
   card.innerHTML = `
     <img src="${p.img}" alt="${p.name}">
     <div class="card-content">
