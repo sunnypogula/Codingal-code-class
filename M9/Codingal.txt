@@ -1,0 +1,2 @@
+File in write mode ....Hi! iam pengium. i am 1 yr.old
+ file in append mode..Hi! iam pengium. i am 1 yr.old
