@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank App - Debit & Credit Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .balance {
+      font-size: 20px;
+      text-align: center;
+      margin: 10px 0;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #218838;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    .credit {
+      color: green;
+    }
+    .debit {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>💰 Bank App</h2>
+    <div class="balance">
+      Balance: <span id="balance">0</span> ₹
+    </div>
+
+    <input type="number" id="amount" placeholder="Enter amount" />
+    <select id="type">
+      <option value="credit">Credit</option>
+      <option value="debit">Debit</option>
+    </select>
+    <button onclick="addTransaction()">Add Transaction</button>
+
+    <h3>Transaction History</h3>
+    <ul id="history"></ul>
+  </div>
+
+  <script>
+    let balance = 0;
+    const balanceEl = document.getElementById("balance");
+    const historyEl = document.getElementById("history");
+
+    function addTransaction() {
+      const amount = parseFloat(document.getElementById("amount").value);
+      const type = document.getElementById("type").value;
+
+      if (isNaN(amount) || amount <= 0) {
+        alert("Please enter a valid amount!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      if (type === "credit") {
+        balance += amount;
+        li.innerHTML = `+ ₹${amount}`;
+        li.classList.add("credit");
+      } else {
+        if (balance < amount) {
+          alert("Insufficient Balance!");
+          return;
+        }
+        balance -= amount;
+        li.innerHTML = `- ₹${amount}`;
+        li.classList.add("debit");
+      }
+
+      balanceEl.textContent = balance;
+      historyEl.appendChild(li);
+
+      document.getElementById("amount").value = "";
+    }
+  </script>
+</body>
+</html>
