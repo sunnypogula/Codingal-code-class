@@ -11,4 +11,8 @@ with open('sample_doc.txt')as fp:
 #merging 2 files
 #to add the data of file2
 #from next line
-datal +="" 
+datal +="\n"
+data2 += data2
+print("Merginr two files...")
+with open ('MergedFIle.txt','w') as fp:
+    fp.write(data2)

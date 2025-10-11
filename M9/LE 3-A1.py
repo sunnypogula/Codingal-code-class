@@ -10,4 +10,4 @@ with open('Codingal.txt','r')as file:
     for line in data:
         word = line.split()
         print(word)
-        
+    file.close
