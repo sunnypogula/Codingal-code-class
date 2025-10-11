@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
        // --- Product Data ---
 const products500g = [
     {name:"Mango (per 500g)", price:25, img:"Mango.jpg"},
-    {name:"Banana (per 500g)", price:30, img:"Banana.avif"},
+    {name:"Banana (per 500g)", price:30, img:"Banana.jpg"},
     {name:"Apple (per 500g)", price:45, img:"Apple.jpg"},
     {name:"Orange (per 500g)", price:25, img:"Orange.jpg"},
     {name:"Watermelon (per 500g)", price:40, img:"Watermelon.jpg"},
@@ -16,7 +16,7 @@ const products500g = [
 
     const products1kg = [
         {name:"Mango (per kg)", price:50 , img:"Mango.jpg"},
-        {name:"Banana (per kg)", price:60, img:"Banana.avif"},
+        {name:"Banana (per kg)", price:60, img:"Banana.jpg"},
         {name:"Apple (per kg)", price:90, img:"Apple.jpg"},
         {name:"Orange (per kg)", price:50, img:"Orange.jpg"},
         {name:"Watermelon (per kg)", price:80, img:"Watermelon.jpg"},
