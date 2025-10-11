@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fruits Store - Product Listing</title>
+    <title>Fruits Store</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,16 +11,75 @@
 <header>
     <h1>Fruits Store</h1>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
+        <a href="#home" id="nav-home">Home</a>
+        <a href="#cart" id="nav-checkout">Checkout (<span id="cart-count">0</span>)</a>
         
         <a href="#" id="view-500g">Per 500g</a>
         <a href="#" id="view-1kg">Per kg</a>
     </nav>
 </header>
 
-<div class="products" id="product-list">
+<div id="home-view" class="view active">
+    <div class="products" id="product-list">
+        </div>
+</div>
+
+<div id="checkout-view" class="view hidden">
+    <div class="container">
+        <h2>Fruits Checkout</h2>
+
+        <form id="checkout-form" novalidate>
+            <div class="form-group">
+                <label for="fullName">Full Name<span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" required />
+                <div class="error" id="error-fullName">Please enter your full name.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email<span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+                <div class="error" id="error-email">Please enter a valid email.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone<span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required />
+                <div class="error" id="error-phone">Please enter your phone number.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address<span class="required">*</span></label>
+                <textarea id="address" name="address" required></textarea>
+                <div class="error" id="error-address">Please enter your address.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method<span class="required">*</span></label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">-- Select --</option>
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="easypaisa">EasyPaisa</option>
+                    <option value="benfit">benfit</option>
+                </select>
+                <div class="error" id="error-paymentMethod">Please select a payment method.</div>
+            </div>
+
+            <div id="easypaisa-section" class="payment-instructions">
+                <p>Send your amount to: <strong>03271406711</strong></p>
+                <div class="form-group">
+                    <label for="screenshot">Upload screenshot (for EasyPaisa)</label>
+                    <input type="file" id="screenshot" name="screenshot" accept="image/*" />
+                </div>
+            </div>
+
+            <button type="submit" id="placeOrderBtn">Place Order</button>
+        </form>
+
+        <div class="thank-you" id="thankYouMessage">
+            ✅ Thank you! Your order has been placed. We'll contact you soon.
+        </div>
     </div>
+</div>
 
 <footer>
     &copy; @ 2025 fruits store

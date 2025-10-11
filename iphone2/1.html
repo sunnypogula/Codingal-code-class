@@ -1,149 +1,232 @@
-<!DOCTYPE html>
+zzz<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fruits Store</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background:#f4f4f4;
-  }
-  header {
-    background:#36a3a3;
-    color:#fff;
-    padding:15px 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  header h1 {
-    margin:0;
-    font-size:1.5em;
-  }
-  nav a {
-    color:#fff;
-    text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
-  }
-
-  /* Product grid */
-  .products {
-    max-width:1200px;
-    margin:20px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-    gap:20px;
-    padding:0 10px;
-  }
-  .card {
-    background:#fff;
-    border-radius:6px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.15);
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    transition:transform 0.2s;
-  }
-  .card:hover { transform: translateY(-3px);}
-  .card img {
-    width:100%;
-    height:180px;
-    object-fit:cover;
-  }
-  .card-content {
-    padding:15px;
-    flex:1;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-  }
-  .card h3 {
-    margin:0 0 8px;
-    font-size:1.1em;
-  }
-  .price {
-    margin:0 0 12px;
-    color:#333;
-    font-weight:bold;
-  }
-  .add-btn {
-    padding:8px;
-    background:#36a3a3;
-    color:#fff;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
-    font-size:0.9em;
-    transition:background0.2s;
-  }
-  .add-btn:hover { background:#2d8888; }
-
-  footer {
-    text-align:center;
-    padding:20px;
-    background:#333;
-    color:#fff;
-    margin-top:40px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruits Store — Checkout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    header, footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+    }
+    header a, footer a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 6px 9px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .form-group {
+      margin-bottom: 17px;
+    }
+    label {
+      display: block;
+      margin-bottom: 7px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width: 100%;
+      padding: 4px;
+      border: px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 102px;
+    }
+    .payment-instructions {
+      margin-top: 10px;
+      padding: 10px;
+      background: #f0f8ff;
+      border: 1px solid #a0cfe8;
+      border-radius: 4px;
+    }
+    .error {
+      color: rgb(255, 0, 0);
+      font-size: 0.9em;
+      display: none;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+    .thank-you {
+      text-align: center;
+      font-size: 1.2em;
+      color: #155724;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 4px;
+      display: none;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <a href="2.html">Home</a>
+    <a href="2.html">Cart</a>
+    (<span id="cart-count">0</span>)
+  </header>
 
-<header>
-  <h1>Fruits Store</h1>
-  <nav>
-    <a href="1.html">Home</a>
-    <a href="1.html">Cart (<span id="cart-count">0</span>)</a>
-    <a href="3.html">Per 500g (<span id="cart-count">0</span>)</a>
-    <a href="2.html">Per kg (<span id="cart-count">0</span>)</a>
-  </nav>
-</header>
+  <div class="container">
+    <h2>Fruits Checkout</h2>
 
-<div class="products" id="product-list">
-  <!-- Products will be inserted by JS -->
-</div>
+    <form id="checkout-form" novalidate>
+      <div class="form-group">
+        <label for="fullName">Full Name<span class="required">*</span></label>
+        <input type="text" id="fullName" name="fullName" required />
+        <div class="error" id="error-fullName">Please enter your full name.</div>
+      </div>
 
-<footer>
-  &copy; @ 2025fruits store
-</footer>
+      <div class="form-group">
+        <label for="email">Email<span class="required">*</span></label>
+        <input type="email" id="email" name="email" required />
+        <div class="error" id="error-email">Please enter a valid email.</div>
+      </div>
 
-<script>
-// Example product data
-const products = [
-  {name:"Mango (per kg) ", price:50 , img:"Mango.jpg"},
-  {name:"Banana (per kg)", price:60, img:"Banana.avif"},
-  {name:"Apple (per kg)", price:90, img:"Apple.jpg"},
-  {name:"Orange (per kg)", price:50, img:"Orange.jpg"},
-  {name:"Watermelon (per kg)", price:80, img:"Watermelon.jpg"},
-  {name:"Cherry (per kg)", price:50, img:"Cherry.jpg"},
-  {name:"Papaya  (per kg)", price:50, img:"Papaya.jpg"},
-  {name:"Lemon (per kg)", price:50, img:"Lemon.jpg"},
-  {name:"Peach (per kg)", price:60, img:"peach.jpg"},
-];
+      <div class="form-group">
+        <label for="phone">Phone<span class="required">*</span></label>
+        <input type="tel" id="phone" name="phone" required />
+        <div class="error" id="error-phone">Please enter your phone number.</div>
+      </div>
 
-const productList = document.getElementById("product-list");
-const cartCount = document.getElementById("cart-count");
-let cartTotal = 0;
+      <div class="form-group">
+        <label for="address">Address<span class="required">*</span></label>
+        <textarea id="address" name="address" required></textarea>
+        <div class="error" id="error-address">Please enter your address.</div>
+      </div>
 
-products.forEach(p => {
-  const card = document.createElement("div");
-  card.className = "card ";
-  card.innerHTML = `
-    <img src="${p.img}" alt="${p.name}">
-    <div class="card-content">
-      <h3>${p.name}</h3>
-      <p class="price">Price: Rs. ${p.price}</p>
-      <button class="add-btn">Add to Cart</button>
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method<span class="required">*</span></label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="">-- Select --</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="easypaisa">EasyPaisa</option>
+          <option value="benfit">benfit</option>
+        </select>
+        <div class="error" id="error-paymentMethod">Please select a payment method.</div>
+      </div>
+
+      <!-- This section shows only if EasyPaisa is selected -->
+      <div id="easypaisa-section" class="payment-instructions" style="display: none;">
+        <p>Send your amount to: <strong>03271406711</strong></p>
+        <div class="form-group">
+          <label for="screenshot">Upload screenshot (for EasyPaisa)</label>
+          <input type="file" id="screenshot" name="screenshot" accept="image/*" />
+        </div>
+      </div>
+
+      <button type="submit" id="placeOrderBtn">Place Order</button>
+    </form>
+
+    <div class="thank-you" id="thankYouMessage">
+      ✅ Thank you! Your order has been placed. We'll contact you soon.
     </div>
-  `;
-  card.querySelector(".add-btn").addEventListener("click", () => {
-    cartTotal++;
-    cartCount.textContent = cartTotal;
-  });
-  productList.appendChild(card);
-});
-</script>
+
+    <a href="2.html" class="back-link">⬅ Back to Products</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Fruits Store
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("checkout-form");
+      const paymentSelect = document.getElementById("paymentMethod");
+      const easySection = document.getElementById("easypaisa-section");
+      const thankYou = document.getElementById("thankYouMessage");
+
+      paymentSelect.addEventListener("change", () => {
+        if (paymentSelect.value === "easypaisa") {
+          easySection.style.display = "block";
+        } else {
+          easySection.style.display = "none";
+        }
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Clear previous error messages
+        document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+
+        let valid = true;
+
+        // Simple validation
+        const fullName = document.getElementById("fullName").value.trim();
+        if (!fullName) {
+          document.getElementById("error-fullName").style.display = "block";
+          valid = false;
+        }
+
+        const email = document.getElementById("email").value.trim();
+        if (!email || !email.includes("@")) {
+          document.getElementById("error-email").style.display = "block";
+          valid = false;
+        }
+
+        const phone = document.getElementById("phone").value.trim();
+        if (!phone) {
+          document.getElementById("error-phone").style.display = "block";
+          valid = false;
+        }
+
+        const address = document.getElementById("address").value.trim();
+        if (!address) {
+          document.getElementById("error-address").style.display = "block";
+          valid = false;
+        }
+
+        const paymentMethod = paymentSelect.value;
+        if (!paymentMethod) {
+          document.getElementById("error-paymentMethod").style.display = "block";
+          valid = false;
+        }
+
+        if (!valid) {
+          return;
+        }
+
+        // Simulate sending data to server…
+        // You can replace this with an actual fetch/AJAX call.
+        setTimeout(() => {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        }, 500);
+      });
+    });
+  </script>
 </body>
 </html>
