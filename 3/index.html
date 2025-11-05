@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TKS Bahrain — Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="https://via.placeholder.com/120x56?text=TKS" alt="TKS logo" />
+        <div>
+          <div style="font-weight:700">Telugu Kala Samithi — Bahrain</div>
+          <div class="muted">Bahrain Manama &nbsp; | &nbsp; 123-456-7890 &nbsp; | &nbsp; info@tksbahrain.com</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="menu-btn" id="menuBtn">Menu</button>
+        <ul id="mainNav">
+          <li><a href="home">Home</a></li>
+          <li><a href="#aim">Aim</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#establishment">Establishment</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-flex">
+        <div class="hero-left">
+          <h1>Welcome To Telugu Kala Samithi</h1>
+          <p>Telugu Kala Samithi (TKS) is a social & cultural entity in the Kingdom of Bahrain established to serve the underprivileged and Telugu expatriate community.</p>
+          <a class="cta" href="#register">Register & Join</a>
+        </div>
+        <div style="width:360px">
+          <div style="height:200px;background:#ddd;border-radius:10px;display:flex;align-items:center;justify-content:center">Image Slider Placeholder</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-top:20px">
+      <div class="grid">
+        <div>
+          <div class="card">
+            <h2>Welcome to TKS</h2>
+            <p class="muted">Serving the Telugu community in Bahrain with culture, support, and social services.</p>
+            <p>We have extended our helping hand to the home for disabled and assist in resolving workers' disputes, repatriations, and other social aid.</p>
+            <p><a href="#history">Our History</a> • <a href="#register">Register</a></p>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>TKS Featured News</h3>
+            <div class="news-list">
+              <article>
+                <h4>UNSTOPPABLE</h4>
+                <div class="muted">Amazing Bahrain Presents — Nov 15, 2024</div>
+                <p class="muted">Short teaser about the news item...</p>
+              </article>
+              <article>
+                <h4>UNSTOPPABLE</h4>
+                <div class="muted">Amazing Bahrain Presents — Nov 15, 2024</div>
+              </article>
+              <article>
+                <h4>UNSTOPPABLE</h4>
+                <div class="muted">Amazing Bahrain Presents — Nov 15, 2024</div>
+              </article>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>TKS on YouTube</h3>
+            <p class="muted">Children at TKS — membership is the opportunity to join one of the leading clubs.</p>
+            <div style="height:140px;background:#f4f6f8;border-radius:8px;display:flex;align-items:center;justify-content:center">YouTube Embed Placeholder</div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Donate to TKS</h3>
+            <p class="muted">Help support our social services and events.</p>
+            <button id="donateBtn">Donate Here</button>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h3>Quick Connect</h3>
+            <form id="contactForm">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="Subject" />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Message"></textarea>
+
+              <div style="margin-top:10px;text-align:right"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h4>Contact Details</h4>
+            <p class="muted">Registration No. 114/J/Th.A.J., P.O.Box: 22707, Kingdom of Bahrain</p>
+            <p class="muted">Tel: +973 3660 0246 / +973 3976 1469</p>
+            <p class="muted">E-mail: tksbahraain@gmail.com</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container" id="register" style="margin-top:20px">
+      <div class="card">
+        <h3>Membership</h3>
+        <p class="muted">Register with us to receive regular updates about events and programs.</p>
+        <form id="registerForm">
+          <label for="rname">Name</label>
+          <input id="rname" name="rname" type="text" required />
+          <label for="rphone">Phone</label>
+          <input id="rphone" name="rphone" type="text" />
+          <label for="remail">Email</label>
+          <input id="remail" name="remail" type="email" />
+          <div style="margin-top:8px;text-align:right"><button type="submit">Be a Member</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Telugu Kala Samithi — All Rights Reserved.</div>
+      <div><a href="#">Terms of Use</a> • <a href="#">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

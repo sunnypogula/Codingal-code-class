@@ -1,0 +1,216 @@
+/* ----------------------------
+   styles.css — TKS Bahrain Clone
+-----------------------------*/
+:root {
+  --accent: #0b63a7;
+  --muted: #666;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, Arial, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background: #f9fafc;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand img {
+  height: 56px;
+  width: auto;
+}
+
+nav ul {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+nav li {
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: #f4f7fb;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #f7fbff, #ffffff);
+  padding: 28px 0;
+}
+
+.hero-flex {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #094f88;
+}
+
+/* Grid sections */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* News list */
+.news-list article {
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.news-list h4 {
+  font-size: 15px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Form */
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+input[type=text],
+input[type=email],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #094f88;
+}
+
+/* Footer */
+footer {
+  margin-top: 28px;
+  padding: 20px 0;
+  background: var(--accent);
+  color: #fff;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
