@@ -9,5 +9,3 @@ print("num1 << num2 are:",num1 << num2)#left shift operator
 print("num1 >> num2 are:",num1 >> num2)#right shift operator
 print("~num1 are:", ~num1) #negation operator
 print("~num2 are:", ~num2)
-
-
