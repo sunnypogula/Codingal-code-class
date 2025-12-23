@@ -1,10 +1,10 @@
 --Create the DEPARTMENT table if it does not exist
-CREATE TABLES IF NOT EXISTS DEPARTMENT (
+CREATE TABLE IF NOT EXISTS DEPARTMENT (
   EMPLOYESS_ID TEXT,
   NAME TEXT,
   DEPARTMENT_ID TEXT,
   MANAGER_ID TEXT,
-  MANAGER_ID
+  SALARY REAL
 );
 
 INSERT INTO DEPARTMENT(EMPLOYESS_ID,NAME,DEPARTMENT_ID,MANAGER_ID,SALARY)VALUES
@@ -28,12 +28,19 @@ GROUP BY department_id;
 --Query to sum the salary of each department
 SELECT department_id,SUM(salary)
 FROM DEPARTMENT
-GROUP BY deparment_id;
+GROUP BY deparTment_id;
 
 --Query to count the number of employees and sum the salary in each department
-SELECT department_id AS "Department Code",
+SELECT department_id AS "Department code",
 COUNT(*) AS "No of Employees",
-FROM DEPARMENT
+SUM(salary)AS"Total Salary"
+FROM DEPARTMENT 
+GROUP BY department_id;
+
+--Query to sum the salary of employess with a spesific manager
+SELECT department_id AS "Department Code",
+SUM(SALARY)AS "total Salary"
+FROM DEPARTMENT
 WHERE MANAGER_ID = '103'
 GROUP BY department_id;
 
