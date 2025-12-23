@@ -1,15 +1,15 @@
 --Create the STUDENT table if it does not exist
 --NOT NULL is used for NAME to ensure every student record has a name
-CREATE TABLE IF NOT EXIST STUDENT(
+CREATE TABLE IF NOT EXISTS STUDENT(
    ROLL_NO TEXT PRIMARY KEY,
    NAME TEXT NOT NULL,
    ADDRESS TEXT,
    PHONE TEXT,
-   AGE INTEDER
+   AGE INTEGER
 );
 
 --Insert sample data into the STUDENT table
-INSERT INTO STUDENT (ROLL_NO,NAME,ADDRESS,PHONE,AGE)VALUES
+INSERT INTO STUDENT(ROLL_NO, NAME, ADDRESS, PHONE, AGE)VALUES
    ('1','RAM','DELHI','******',18),
    ('2', 'RAMESH', 'GURGAON', '*****', 18),
    ('3', 'SUJIT', 'ROHTAK', '*****', 20),
@@ -18,6 +18,9 @@ INSERT INTO STUDENT (ROLL_NO,NAME,ADDRESS,PHONE,AGE)VALUES
    ('6', 'HARSH', 'GURGAON', '*****', 18);
 
 --Select all records form the STUDENT table to verify insertion
+SELECT * FROM Salesman;
+
+--Select all records from the Salesman table to verify insertion (if required)
 SELECT * FROM STUDENT;
 
 --Query student who are 18 years old and live in Delhi
