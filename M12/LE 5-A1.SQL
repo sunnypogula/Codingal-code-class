@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS Salesman(
    Salesman_id TEXT PRIMARY KEY,
    name TEXT,
    city TEXT,
-   Comission REAL
+   Comission TEXT
 );
 --Insert sample data into the Salesman table
 INSERT INTO Salesman(Salesman_id,name,city,Comission)VALUES
@@ -75,4 +75,38 @@ JOIN Customer ON Orders.Customer_id = Customer.customer_id
 JOIN Customer ON Orders.Salesman_id = Salesman.Salesman_id
 WHERE Customer.city <> Salesman.city;
 
---
+--Fetching all orders with customer names
+SELECT Orders.ord_no, Customer.cust_name
+FROM Orders
+JOIN Customer ON Orders.customer_id = Customer.customer_id;
+
+--Customers with grades
+SELECT Customer.cust_name AS "Customer", Customer.grade AS "Greade"
+FROM Orders
+JOIN Salesman ON Orders.Salesman_id = Salesman.Salesman_id
+JOIN Customer ON Orders.customer_id = Customer.customer_id
+WHERE Customer.grade IS NOT NULL;
+
+
+--Customers with alesman where commissiom is between 0.12 and 0.14
+SELECT Customer.cust_name AS "Customer",
+Customer.city AS "City",
+Salesman.name AS "Salesman",
+Salesman.commission
+FROM Customer
+JOIN Salesman ON Customer,Salesman_id = Salesman.Salesman_id
+WHERE Salesman.commission BETWEEN 0.12 AND 0.14;
+
+--Calculating commission for orders where customer grade is 200 or more
+SELECT Orders.ord_no,Customer,cust_name, Salesman.commission AS "Commission%",
+Orders.purch_amt*Salesman.commission AS "Commission"
+FROM Orders
+JOIN Salesman ON Orders.Salesman_id = Salesman.Salesman_id
+JOIN Customer ON Orders.customer_id = Customer.customer_id
+WHERE Customer .grade >= 200;
+
+--orders on a specific date
+SELECT *
+FROM Customer
+JOIN orders ON Customer.customer_id = Orders.customer_id
+WHERE orders.ord_date ='2012-10-05';
