@@ -1,4 +1,4 @@
--- 1. CREATE THE CUSTOMERS & EXPORTS TABLE
+-- 1.CREATE THE CUSTOMERS & EXPORTS TABLE
 CREATE TABLE company_records (
     customer_id INT PRIMARY KEY,
     customer_name VARCHAR(100),
@@ -7,7 +7,7 @@ CREATE TABLE company_records (
     order_amount DECIMAL(10, 2)
 );
 
--- 2. INSERT SAMPLE DATA FOR HARISH'S COMPANY
+-- 2.INSERT SAMPLE DATA FOR HARISH'S COMPANY
 INSERT INTO company_records (customer_id, customer_name, product_name, export_country, order_amount) VALUES
 (1, 'Aaron Miller', 'Solar Panels', 'Germany', 15000.00),
 (2, 'Jordan Taylor', 'Wind Turbines', 'Canada', 22000.00),
@@ -17,21 +17,21 @@ INSERT INTO company_records (customer_id, customer_name, product_name, export_co
 (6, 'Robert Fox', 'Solar Panels', 'Brazil', 18000.00);
 
 
--- 3. QUERY 1: Find customers whose name starts with "a" (Case-Insensitive check)
+-- 3.QUERY 1: Find customers whose name starts with "a" (Case-Insensitive check)
 -- The '%' wildcard matches any characters following the 'a'
 SELECT customer_name, product_name, export_country 
 FROM company_records
 WHERE customer_name LIKE 'a%';
 
 
--- 4. QUERY 2: Find customers whose name contains "or" anywhere
+-- 4.QUERY 2: Find customers whose name contains "or" anywhere
 -- The '%' wildcards on both sides mean 'or' can be at the beginning, middle, or end
 SELECT customer_name, product_name, export_country
 FROM company_records
 WHERE customer_name LIKE '%or%';
 
 
--- 5. QUERY 3: Find all unique countries where products are exported
+-- 5.QUERY 3: Find all unique countries where products are exported
 -- The DISTINCT keyword eliminates duplicate country entries from the list
 SELECT DISTINCT export_country 
 FROM company_records
