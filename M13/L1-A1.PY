@@ -1,8 +1,31 @@
-print("What is the type of above given database - \n 1)Relational Database \n 2)Non-Relational Database")
-answer = int(input("Enter your guess here..."))
-if answer == 2:
-    print("You guessed it right!")
-else:
-    print("Unfortunately your guess was wrong.")
+#### **1. Import Database**
+"""
 
-print("\nPlease tell your mentor why you guessed this?")
+# Import file from your system
+from google.colab import files
+file = files.upload()
+
+"""#### **2. Connect with SQLite Database**"""
+
+# Connect with sqlite database
+# Import necessary libraries
+import sqlite3
+
+database = 'database.sqlite'
+
+conn = sqlite3.connect(database)
+print('Opened data successfully')
+
+# Read SQL query for getting all the tables of database into a dataframe
+import pandas as pd
+tables = pd.read_sql("""SELECT * 
+                    FROM sqlite_master
+                    WHERE type='table';""", conn)
+tables
+
+# Read Table from the database into dataframe
+matches = pd.read_sql("""SELECT *
+                        FROM Match;""", conn)
+
+# Print Table info
+matches.info()
