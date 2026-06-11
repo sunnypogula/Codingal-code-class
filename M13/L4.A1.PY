@@ -1,6 +1,4 @@
-# Import dataset
-from google.colab import files
-file = files.upload()
+
 
 # Connect with sqlite database
 # Import necessary libraries
