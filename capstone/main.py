@@ -69,7 +69,5 @@ sns.countplot(x="island", data=df)
 
 plt.show()
 
-# Pairplot
-
 sns.pairplot(df, hue="species")
 plt.show()
