@@ -23,7 +23,7 @@ elif mood == "sad":
     if energy == "high":
         advice = "Go for a walk or talk to a friend to clear your mind."
     else:
-        advice = "Get plenty of rest and treat yourself kindly today."
+        advice = "Get plenty of rest and trust yourself kindly today."
 elif mood == "stressed":
     advice = "Take a deep breath and take things one step at a time."
 else:
