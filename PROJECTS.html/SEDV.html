@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Event Data Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f4f7f6;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .loading {
+      color: #888;
+      font-style: italic;
+    }
+    .event-details {
+      margin-top: 15px;
+      background-color: #e9ecef;
+      padding: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>School Event Data Viewer</h2>
+    <p>Click the button below to fetch school event details.</p>
+    
+    <button onclick="fetchEventData()">Load Event Data</button>
+
+    <!-- Display Status and Output -->
+    <div id="status" class="loading" style="margin-top: 15px;"></div>
+    <div id="jsonDisplay" style="margin-top: 10px; font-family: monospace;"></div>
+    <div id="eventOutput" class="event-details" style="display: none;"></div>
+  </div>
+
+  <script>
+    // 1. Sample JavaScript Object representing Event Data
+    const rawEventData = {
+      title: "Annual Sports Day",
+      date: "October 15, 2026",
+      location: "School Main Ground",
+      organizer: "Physical Education Dept"
+    };
+
+    // 2. Asynchronous Function to simulate fetching server data
+    async function fetchEventData() {
+      const statusDiv = document.getElementById("status");
+      const jsonDiv = document.getElementById("jsonDisplay");
+      const outputDiv = document.getElementById("eventOutput");
+
+      // Reset display
+      statusDiv.innerHTML = "⏳ Loading event data from server...";
+      jsonDiv.innerHTML = "";
+      outputDiv.style.display = "none";
+
+      // Simulate a 2-second server delay using setTimeout inside a Promise
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
+      // 3. Convert JS Object to JSON string (simulating server response)
+      const jsonString = JSON.stringify(rawEventData);
+      jsonDiv.innerHTML = `<strong>JSON String from Server:</strong><br>${jsonString}`;
+
+      // 4. Parse JSON string back into a JavaScript Object
+      const parsedEvent = JSON.parse(jsonString);
+
+      // Update loading status
+      statusDiv.innerHTML = "✅ Data Loaded Successfully!";
+
+      // 5. Display the final event details on the webpage
+      outputDiv.style.display = "block";
+      outputDiv.innerHTML = `
+        <h3>${parsedEvent.title}</h3>
+        <p><strong>Date:</strong> ${parsedEvent.date}</p>
+        <p><strong>Location:</strong> ${parsedEvent.location}</p>
+        <p><strong>Organizer:</strong> ${parsedEvent.organizer}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
