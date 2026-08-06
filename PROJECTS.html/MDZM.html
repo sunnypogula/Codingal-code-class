@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Zoo Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+
+    /* Main Zoo Container */
+    #zoo-container {
+      background-color: #ffffff;
+      border: 3px solid #2e8b57;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    /* Animal Zones */
+    .zone {
+      background-color: #e8f5e9;
+      border: 1px solid #81c784;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 14px;
+      background-color: #2e8b57;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    #log-output {
+      background-color: #333;
+      color: #00ffcc;
+      padding: 15px;
+      border-radius: 5px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🦁 My Digital Zoo Manager</h1>
+
+  <!-- Main Zoo Container -->
+  <div id="zoo-container">
+    <div id="zone-safari" class="zone">
+      <h2>Safari Zone</h2>
+      <p id="lion">Lion 🦁</p>
+      <p id="giraffe">Giraffe 🦒</p>
+    </div>
+
+    <div id="zone-aquatic" class="zone">
+      <h2>Aquatic Zone</h2>
+      <p id="penguin">Penguin 🐧</p>
+    </div>
+  </div>
+
+  <!-- Action Button -->
+  <button onclick="exploreAndUpdateDOM()">Explore & Update Zoo DOM</button>
+
+  <!-- Output Console -->
+  <h3>DOM Tree Analysis Log:</h3>
+  <div id="log-output">Click the button above to analyze the DOM!</div>
+
+  <script>
+    function exploreAndUpdateDOM() {
+      let log = "";
+
+      // 1. Identify Target Node
+      const lionNode = document.getElementById("lion");
+
+      // 2. Identify Parent Node
+      const safariZoneParent = lionNode.parentNode;
+      log += `Parent Node of Lion: <${safariZoneParent.tagName.toLowerCase()} id="${safariZoneParent.id}">\n`;
+
+      // 3. Identify Child Nodes
+      const safariChildren = safariZoneParent.children;
+      log += `Number of Children in Safari Zone: ${safariChildren.length}\n`;
+      log += `First Child: ${safariChildren[0].textContent}\n`;
+
+      // 4. Identify Sibling Nodes
+      const lionNextSibling = lionNode.nextElementSibling;
+      log += `Next Sibling of Lion: ${lionNextSibling ? lionNextSibling.textContent : 'None'}\n`;
+
+      // 5. Check Node Types
+      log += `Lion Element Node Type Code: ${lionNode.nodeType} (1 = Element Node)\n`;
+      log += `Lion Text Node Type Code: ${lionNode.firstChild.nodeType} (3 = Text Node)\n\n`;
+
+      // 6. Update Content and Styles using DOM Methods
+      lionNode.textContent = "King Lion 👑🦁";
+      lionNode.style.fontWeight = "bold";
+      lionNode.style.color = "#d97706";
+
+      // Dynamically add a new child element (new animal) to the DOM tree
+      const zebra = document.createElement("p");
+      zebra.id = "zebra";
+      zebra.textContent = "Zebra 🦓 (Newly Added!)";
+      zebra.style.color = "#1f2937";
+      safariZoneParent.appendChild(zebra);
+
+      log += "✅ Updated Lion text & style!\n";
+      log += "✅ Dynamically added Zebra to Safari Zone!";
+
+      // Display results in the log box
+      document.getElementById("log-output").textContent = log;
+    }
+  </script>
+
+</body>
+</html>
