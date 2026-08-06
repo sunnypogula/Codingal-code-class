@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Website - Social Media & Footer</title>
+  
+  <!-- Font Awesome Icons CDN (for social media icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* General Page Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+    }
+
+    /* Dummy Main Content Area */
+    .main-content {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    /* 1. Social Media Section */
+    .social-section {
+      background-color: #fff3e0;
+      padding: 40px 20px;
+      text-align: center;
+      border-top: 2px solid #ffe0b2;
+    }
+
+    .social-section h2 {
+      font-size: 28px;
+      color: #d84315;
+      margin-bottom: 10px;
+    }
+
+    .social-section p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #d84315;
+      color: #ffffff;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 22px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .social-icon:hover {
+      background-color: #bf360c;
+      transform: translateY(-5px);
+    }
+
+    /* 2. Footer Section */
+    footer {
+      background-color: #212121;
+      color: #ffffff;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-column h3 {
+      color: #ffb74d;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .footer-column p, 
+    .footer-column li {
+      color: #bbb;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column ul li a {
+      color: #bbb;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #ffb74d;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #424242;
+      color: #888;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dummy Hero/Main Section -->
+  <div class="main-content">
+    <h1>🍝 Welcome to Delicious Bites</h1>
+    <p>Fresh ingredients, delicious recipes, served with love.</p>
+  </div>
+
+  <!-- SECTION 1: Social Media Section -->
+  <section class="social-section">
+    <h2>Connect With Us</h2>
+    <p>Follow us on social media for daily specials and updates!</p>
+    
+    <div class="social-links">
+      <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Footer Section -->
+  <footer>
+    <div class="footer-container">
+      
+      <!-- Column 1: About -->
+      <div class="footer-column">
+        <h3>Delicious Bites</h3>
+        <p>Bringing authentic flavors and fresh meal experience to your table every single day.</p>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Reservations</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Opening Hours -->
+      <div class="footer-column">
+        <h3>Opening Hours</h3>
+        <p>Mon - Fri: 11:00 AM - 10:00 PM</p>
+        <p>Sat - Sun: 10:00 AM - 11:00 PM</p>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>📍 123 Foodie Street, Flavor Town</p>
+        <p>📞 +1 (555) 019-2834</p>
+        <p>✉️ info@deliciousbites.com</p>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 Delicious Bites Restaurant. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
