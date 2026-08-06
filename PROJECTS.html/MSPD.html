@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Study Progress Dashboard</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="container my-4">
+
+    <!-- 1. Jumbotron Header -->
+    <div class="p-5 mb-4 bg-light rounded-3 text-center border">
+      <h1 class="display-5 fw-bold text-primary">My Study Progress Dashboard</h1>
+      <p class="fs-4 text-muted">Track your subjects, completed lessons, and overall progress!</p>
+    </div>
+
+    <!-- 2. Subject Buttons with Badges for Lesson Counts -->
+    <div class="mb-5 text-center">
+      <h3 class="mb-3">Subjects & Lessons</h3>
+      
+      <button type="button" class="btn btn-primary m-2">
+        Mathematics <span class="badge bg-light text-dark ms-1">12 Lessons</span>
+      </button>
+
+      <button type="button" class="btn btn-success m-2">
+        Science <span class="badge bg-light text-dark ms-1">8 Lessons</span>
+      </button>
+
+      <button type="button" class="btn btn-warning text-dark m-2">
+        History <span class="badge bg-dark text-white ms-1">5 Lessons</span>
+      </button>
+
+      <button type="button" class="btn btn-info text-white m-2">
+        Computer Science <span class="badge bg-light text-dark ms-1">15 Lessons</span>
+      </button>
+    </div>
+
+    <!-- 3. Learning Progress Bars -->
+    <div>
+      <h3 class="mb-4 text-center">Learning Progress</h3>
+
+      <!-- Mathematics Progress -->
+      <div class="mb-3">
+        <label class="fw-bold mb-1">Mathematics (75%)</label>
+        <div class="progress" style="height: 25px;">
+          <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;">75%</div>
+        </div>
+      </div>
+
+      <!-- Science Progress -->
+      <div class="mb-3">
+        <label class="fw-bold mb-1">Science (50%)</label>
+        <div class="progress" style="height: 25px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: 50%;">50%</div>
+        </div>
+      </div>
+
+      <!-- History Progress -->
+      <div class="mb-3">
+        <label class="fw-bold mb-1">History (30%)</label>
+        <div class="progress" style="height: 25px;">
+          <div class="progress-bar bg-warning text-dark" role="progressbar" style="width: 30%;">30%</div>
+        </div>
+      </div>
+
+      <!-- Computer Science Progress -->
+      <div class="mb-3">
+        <label class="fw-bold mb-1">Computer Science (90%)</label>
+        <div class="progress" style="height: 25px;">
+          <div class="progress-bar bg-info text-white" role="progressbar" style="width: 90%;">90%</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
